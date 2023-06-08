@@ -1,4 +1,10 @@
-# Getting Started with Create React App
+Project YouTube 2.0 Clone 
+
+Welcome to Project YouTube 2.0 Clone! This is an amazing open-source project that aims to replicate the popular video-sharing platform YouTube. With this project, you can explore the functionality and features of YouTube and even customize it to suit your needs.
+
+![screen-shot]()
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
