@@ -1,8 +1,8 @@
-Project YouTube 2.0 Clone 
+# Project The Full Stack YouTube 2.0 Clone 
 
 Welcome to Project YouTube 2.0 Clone! This is an amazing open-source project that aims to replicate the popular video-sharing platform YouTube. With this project, you can explore the functionality and features of YouTube and even customize it to suit your needs.
 
-![screen-shot]()
+![screen-shot](https://i.imgur.com/THEznZ1.png)
 
 ## Getting Started with Create React App
 
