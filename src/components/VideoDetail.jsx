@@ -13,16 +13,35 @@ const VideoDetail = () => {
   const { id } = useParams();
 
   useEffect(() => {
-    fetchFromAPI(`videos?part=snippet,statistics&id=${id}`).then(data =>
-      setVideoDetail(data.items[0])
-    );
+    const fetchVideoDetail = async () => {
+      try {
+        const videoDetailData = await fetchFromAPI(
+          `videos?part=snippet,statistics&id=${id}`
+        );
+        setVideoDetail(videoDetailData.items[0]);
+      } catch (error) {
+        console.error('Error fetching video detail:', error);
+      }
+    };
 
-    fetchFromAPI(`search?part=snippet&relatedToVideoId=${id}&type=video`).then(
-      data => setVideos(data.items)
-    );
+    const fetchRelatedVideos = async () => {
+      try {
+        const relatedVideosData = await fetchFromAPI(
+          `search?part=snippet&relatedToVideoId=${id}&type=video`
+        );
+        setVideos(relatedVideosData.items);
+      } catch (error) {
+        console.error('Error fetching related videos:', error);
+      }
+    };
+
+    fetchVideoDetail();
+    fetchRelatedVideos();
   }, [id]);
 
-  if (!videoDetail?.snippet) return 'Loading...';
+  if (!videoDetail?.snippet) {
+    return 'Loading...';
+  }
 
   const {
     snippet: { title, channelId, channelTitle },
